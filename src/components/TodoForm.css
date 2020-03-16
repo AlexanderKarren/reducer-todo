@@ -1,0 +1,45 @@
+.todo-form {
+    border:1px solid lightgray;
+    border-radius:5px;
+    background-color:rgba(173, 173, 173, 0.5);
+}
+
+.todo-form form {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.todo-form form div {
+    margin-left:5px;
+    display:flex;
+    justify-content:space-between;
+    width:50%;
+}
+
+.todo-form form div input {
+    width:85%;
+    background-color:inherit;
+    border:0;
+    outline:none;
+    font-size:inherit;
+    font-family:inherit;
+    color:white;
+}
+
+.todo-form form button {
+    background-color:inherit;
+    border:0;
+    border-left:1px solid lightgray;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    width:40px;
+    color:white;
+    font-size:2rem;
+    padding:0;
+}
+
+.todo-form form button:hover {
+    cursor:pointer;
+    background-color:rgba(173, 173, 173, 0.25)
+}
