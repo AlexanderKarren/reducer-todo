@@ -11,6 +11,7 @@ export default function TodoList() {
         <div className="todo-list-container">
             {todos.map(todo => <Todo key={todo.id} todo={todo} dispatch={dispatch}/>)}
             <TodoForm dispatch={dispatch}/>
+            <button onClick={() => dispatch({type: "CLEAR_COMPLETED"})}>Clear Completed</button>
         </div>
     )
 }

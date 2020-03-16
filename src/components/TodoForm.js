@@ -30,20 +30,20 @@ export default function TodoForm({dispatch}) {
 
     return (
         <div className="todo-form">
-            <form>
+            <form autoComplete="off">
                 <div>
                     <label htmlFor="task">Task:</label>
                     <input type="text" name="task" id="task" value={values.task} onChange={handleChange}/>
                 </div>
                 <div>
                     <label htmlFor="tags">Tags:</label>
-                    <input type="text" name="tags" id="tags" value={values.tags} onChange={handleChange}/>
+                    <input type="text" name="tags" id="tags" value={values.tags} onChange={handleChange} />
                 </div>
                 <div>
                     <label htmlFor="due">Due:</label>
                     <input type="date" name="due" id="due" value={values.due} onChange={handleChange}/>
                 </div>
-                <button type="submit" onClick={handleSubmit}><div>+</div></button>
+                <button type="submit" onClick={handleSubmit}><i class="fas fa-plus"></i></button>
             </form>
         </div>
     )

@@ -60,21 +60,21 @@ Follow these steps for completing your project.
 
 You get to choose how you want to set up your components. Please don't just do this all inside App. I know it is a small and simple project, but you will do yourself a great service by setting your app up as if it were going to be a larger application
 
-- [ ] Using the `reducer` hook, set up state in your component. Think about what you'll need in order to use the reducer hook, and think about what it returns.
-- [ ] Now render your list of todos from your reducer in your app
+- [x] Using the `reducer` hook, set up state in your component. Think about what you'll need in order to use the reducer hook, and think about what it returns.
+- [x] Now render your list of todos from your reducer in your app
 
 ### STEP 3 - Adding todos
 
-- [ ] Build a form to add todos to your list
-- [ ] Build a function that will dispatch an action to add a new todo
-- [ ] Write the `case` in your reducer for adding a todo (You can create a unique id with `new Date()`)
+- [x] Build a form to add todos to your list
+- [x] Build a function that will dispatch an action to add a new todo
+- [x] Write the `case` in your reducer for adding a todo (You can create a unique id with `new Date()`)
 
 ### STEP 4 - Toggle the completed field
 
-- [ ] Build a function that will dispatch an action to toggle a todo's completed field
-- [ ] Invoke this new function when you click on a todo
-- [ ] Style your todo to somehow show that it is completed (be creative here!)
-- [ ] Write the `case` in your reducer for toggling the completed property
+- [x] Build a function that will dispatch an action to toggle a todo's completed field
+- [x] Invoke this new function when you click on a todo
+- [x] Style your todo to somehow show that it is completed (be creative here!)
+- [x] Write the `case` in your reducer for toggling the completed property
 
 ### STEP 5 - Clearing completed todos
 
@@ -88,5 +88,5 @@ After finishing your required elements, you can push your work further. These go
 
 - [ ] Add the moment library to show in "human speak" when a todo was completed
 - [x] Add a property on the todos for when a todo should be completed by. Then display that a todo is "overdue" if it has not been completed by its due date
-- [ ] Add "tags" to your todos, and display them with your todo list
-- [ ] Have fun with the styling. Make this something you'd be proud to show off!
+- [x] Add "tags" to your todos, and display them with your todo list
+- [x] Have fun with the styling. Make this something you'd be proud to show off!

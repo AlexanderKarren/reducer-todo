@@ -22,6 +22,7 @@
 
 .completed {
     text-decoration: line-through;
+    color:#A9A9A9;
 }
 
 .todo:hover {

@@ -10,7 +10,7 @@ export default function Todo({todo, dispatch}) {
         if (todo.due === date) {
             setDueToday(true);
         }
-    }, [])
+    }, [todo.due])
 
     return (
         <div className={dueToday ? "todo overdue" : "todo"} onClick={() => dispatch({type: "TOGGLE_COMPLETION", payload:todo.id})}>
