@@ -21,3 +21,30 @@ export const initialState = [
         due: "2020-3-16"
     }
 ]
+
+export const todoReducer = (state, action) => {
+    switch (action.type) {
+        case "ADD_TO_LIST":
+          return [...state, {
+              id: Date.now(),
+              task: action.payload.task,
+              completed: false,
+              tags: action.payload.tags[0].split(","),
+              due: action.payload.due
+          }];
+          case "TOGGLE_COMPLETION":
+              return state.map(todo => {
+                  if (todo.id === action.payload) {
+                      return {
+                          ...todo,
+                          completed: !todo.completed
+                      }
+                  }
+                  else {
+                      return todo;
+                  }
+              })
+        default:
+          return state;
+    }
+}

@@ -20,6 +20,10 @@
     color:red;
 }
 
+.completed {
+    text-decoration: line-through;
+}
+
 .todo:hover {
     border:.5px solid cornflowerblue;
     cursor:pointer;

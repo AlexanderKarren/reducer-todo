@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Todo.css'
 
-export default function Todo({todo}) {
+export default function Todo({todo, dispatch}) {
     const [dueToday, setDueToday] = useState(false);
 
     useEffect(() => {
@@ -13,9 +13,9 @@ export default function Todo({todo}) {
     }, [])
 
     return (
-        <div className={dueToday ? "todo overdue" : "todo"}>
-            <div>
-                <input type="checkbox" id={`todo-${todo.id}`}/>
+        <div className={dueToday ? "todo overdue" : "todo"} onClick={() => dispatch({type: "TOGGLE_COMPLETION", payload:todo.id})}>
+            <div className={todo.completed ? "completed" : ""}>
+                <input type="checkbox" id={`todo-${todo.id}`} checked={todo.completed}/>
                 <label htmlFor={`todo-${todo.id}`}>{todo.task}</label>
             </div>
             <div className="tags">
