@@ -1,0 +1,10 @@
+.todo {
+    padding:5px;
+    margin:10px 0;
+    background-color:white;
+    color:black;
+    border:.5px solid #d3d3d3;
+    border-radius:5px;
+    display:flex;
+    align-items:center;
+}
