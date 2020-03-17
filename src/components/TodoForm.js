@@ -7,6 +7,7 @@ export default function TodoForm({dispatch}) {
         tags: "",
         due: "",
     })
+    const [emptyTask, setEmptyTask] = useState(false);
 
     const handleChange = event => {
         setValues({
@@ -17,22 +18,31 @@ export default function TodoForm({dispatch}) {
 
     const handleSubmit = event => {
         event.preventDefault();
-        dispatch({
-            type: "ADD_TO_LIST",
-            payload: values,
-        })
-        setValues({
-            task: "",
-            tags: "",
-            due: "",
-        })
+        if (values.task !== "") {
+            setEmptyTask(false);
+            dispatch({
+                type: "ADD_TO_LIST",
+                payload: values,
+            })
+            setValues({
+                task: "",
+                tags: "",
+                due: "",
+            })       
+        }
+        else {
+            setEmptyTask(true);
+            setTimeout(() => {
+                setEmptyTask(false);
+            }, 2000)
+        }
     }
 
     return (
         <div className="todo-form">
             <form autoComplete="off">
                 <div>
-                    <label htmlFor="task">Task:</label>
+                    <label style={emptyTask ? {color: "tomato"} : {color: "white"}} htmlFor="task">Task:</label>
                     <input type="text" name="task" id="task" value={values.task} onChange={handleChange}/>
                 </div>
                 <div>

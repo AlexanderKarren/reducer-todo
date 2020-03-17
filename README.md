@@ -23,16 +23,16 @@ In this project, you build an app that let's you display a todo list from reduce
 - [x] Create a new react app running `npx create-react-app todo --use-npm`.
 - [x] CD into the react app directory `cd todo`.
 - [x] Start up the app using `npm start`.
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repository). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete by merging the branch back into master.
-- [ ] Do your magic!
+- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repository). **Please don't merge your own pull request**
+- [x] Add your team lead as a reviewer on the pull-request
+- [x] Your team lead will count the project as complete by merging the branch back into master.
+- [x] Do your magic!
 
 ## Minimum Viable Product
 
@@ -78,9 +78,9 @@ You get to choose how you want to set up your components. Please don't just do t
 
 ### STEP 5 - Clearing completed todos
 
-- [ ] Build a function that will dispatch an action to filter out any completed todos
-- [ ] Invoke this new function when you click on a "Clear completed" button
-- [ ] Write the `case` in your reducer for filtering completed todos
+- [x] Build a function that will dispatch an action to filter out any completed todos
+- [x] Invoke this new function when you click on a "Clear completed" button
+- [x] Write the `case` in your reducer for filtering completed todos
 
 ## Stretch Problems
 

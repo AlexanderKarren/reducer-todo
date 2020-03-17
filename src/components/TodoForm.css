@@ -20,7 +20,9 @@
 
 .todo-form form div input {
     width:85%;
+    margin-left:5px;
     background-color:inherit;
+    border-radius:5px;
     border:0;
     outline:none;
     font-size:inherit;
@@ -43,4 +45,8 @@
 .todo-form form button:hover {
     cursor:pointer;
     background-color:rgba(173, 173, 173, 0.25)
+}
+
+.todo-form form label[for=task] {
+    transition:.3s;
 }
