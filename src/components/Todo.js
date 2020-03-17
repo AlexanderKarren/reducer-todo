@@ -9,7 +9,7 @@ export default function Todo({todo, dispatch}) {
     const dateIsToday = () => {
         let today = new Date();
         let date = today.getFullYear()+((today.getMonth() <= 9) ? '-0' : "-")+(today.getMonth()+1)+'-'+today.getDate();
-        if (todo.due[0] === date) {
+        if ((todo.due === date) || (todo.due[0] === date)) {
             setDueToday(true);
         }
     }

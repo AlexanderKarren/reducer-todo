@@ -34,7 +34,7 @@ export default function TodoForm({dispatch}) {
             setEmptyTask(true);
             setTimeout(() => {
                 setEmptyTask(false);
-            }, 2000)
+            }, 1000)
         }
     }
 
@@ -53,7 +53,7 @@ export default function TodoForm({dispatch}) {
                     <label htmlFor="due">Due:</label>
                     <input type="date" name="due" id="due" value={values.due} onChange={handleChange}/>
                 </div>
-                <button type="submit" onClick={handleSubmit}><i class="fas fa-plus"></i></button>
+                <button type="submit" onClick={handleSubmit}><i className="fas fa-plus"></i></button>
             </form>
         </div>
     )
