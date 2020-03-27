@@ -38,6 +38,10 @@ h2 {
   font-size:2rem;
 }
 
+button {
+  transition:.2s;
+}
+
 button:focus {
   outline:none;
 }

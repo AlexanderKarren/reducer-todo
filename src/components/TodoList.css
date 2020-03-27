@@ -1,5 +1,5 @@
 .todo-list-container {
-    width:60%;
+    min-width:60%;
 }
 
 .todo-list-container > button {
