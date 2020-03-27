@@ -12,6 +12,7 @@ export default function TodoList() {
             {todos.map(todo => <Todo key={todo.id} todo={todo} dispatch={dispatch}/>)}
             <TodoForm dispatch={dispatch}/>
             <button onClick={() => dispatch({type: "CLEAR_COMPLETED"})}>Clear Completed</button>
+            <button type="button" onClick={() => dispatch({type: "SAVE_CHANGES"})}>Save Changes</button>
         </div>
     )
 }

@@ -15,9 +15,9 @@ export const initialState = [
     },
     {
         id: 2,
-        task: "Finish this assignment",
+        task: "Separate your tags with commas!",
         completed: false,
-        tags: ["school", "Lambda"],
+        tags: ["one", "two", "three"],
         due: "2020-03-17"
     }
 ]
@@ -47,6 +47,9 @@ export const todoReducer = (state, action) => {
             })
         case "CLEAR_COMPLETED":
             return state.filter(todo => !todo.completed)
+        case "SAVE_CHANGES":
+            localStorage.setItem("todos", JSON.stringify(state));
+            return state;
         default:
           return state;
     }
