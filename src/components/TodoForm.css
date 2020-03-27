@@ -40,6 +40,10 @@
     color:white;
     font-size:2rem;
     padding:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:2px;
 }
 
 .todo-form form button:hover {

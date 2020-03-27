@@ -24,12 +24,14 @@ export default function TodoForm({dispatch}) {
                 type: "ADD_TO_LIST",
                 payload: values,
             })
+            dispatch({type: "SAVE_CHANGES"})
             setValues({
                 task: "",
                 tags: "",
                 due: "",
             })       
         }
+        // ".task" string is empty
         else {
             setEmptyTask(true);
             setTimeout(() => {

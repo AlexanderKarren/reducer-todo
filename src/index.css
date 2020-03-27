@@ -18,7 +18,9 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 62.5%;
 	font: inherit;
-	vertical-align: baseline;
+  vertical-align: baseline;
+  max-width:100%;
+  overflow-x:hidden;
 }
 
 body {
@@ -30,6 +32,10 @@ body {
 
 h1 {
   font-size:3rem;
+}
+
+h2 {
+  font-size:2rem;
 }
 
 button:focus {

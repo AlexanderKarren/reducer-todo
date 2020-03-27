@@ -5,14 +5,16 @@ import TodoForm from './TodoForm'
 import './TodoList.css'
 
 export default function TodoList() {
-    const [todos, dispatch] = useReducer(todoReducer, initialState);
+    const [todos, dispatch] = useReducer(todoReducer, (JSON.parse(localStorage.getItem("todos")) || initialState));
 
     return (
         <div className="todo-list-container">
             {todos.map(todo => <Todo key={todo.id} todo={todo} dispatch={dispatch}/>)}
             <TodoForm dispatch={dispatch}/>
-            <button onClick={() => dispatch({type: "CLEAR_COMPLETED"})}>Clear Completed</button>
-            <button type="button" onClick={() => dispatch({type: "SAVE_CHANGES"})}>Save Changes</button>
+            <button onClick={() => {
+                dispatch({type: "CLEAR_COMPLETED"});
+                dispatch({type: "SAVE_CHANGES"});
+            }}>Clear Completed</button>
         </div>
     )
 }
