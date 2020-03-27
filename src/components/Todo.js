@@ -5,8 +5,6 @@ export default function Todo({todo, dispatch}) {
     const [overdue, setOverdueStatus] = useState(false);
     const [dueDate, setDueDate] = useState(todo.due);
 
-    useEffect(() => dateIsToday(), [])
-
     const dateIsToday = () => {
         let today = new Date();
         let date = today.getFullYear()+((today.getMonth() <= 9) ? '-0' : "-")+(today.getMonth()+1)+'-'+today.getDate();
@@ -16,8 +14,13 @@ export default function Todo({todo, dispatch}) {
         }
     }
 
+    useEffect(() => dateIsToday(), [])
+
     return (
-        <div className={overdue ? "todo overdue" : "todo"} onClick={() => dispatch({type: "TOGGLE_COMPLETION", payload:todo.id})}>
+        <div className={overdue ? "todo overdue" : "todo"} onClick={() => {
+            dispatch({type: "TOGGLE_COMPLETION", payload:todo.id});
+            dispatch({type: "SAVE_CHANGES"});
+        }}>
             <div className={todo.completed ? "completed" : ""}>
                 <input type="checkbox" id={`todo-${todo.id}`} checked={todo.completed}/>
                 <label htmlFor={`todo-${todo.id}`}>{todo.task}</label>

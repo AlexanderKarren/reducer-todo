@@ -8,3 +8,29 @@
   flex-direction:column;
   align-items:center;
 }
+
+.App .main-heading h1 {
+  margin-left:40%;
+}
+
+/* Gear SVG */
+.App .main-heading *:last-child {
+  margin-right:5px;
+}
+
+.App .main-heading *:last-child:hover {
+  fill:#778899;
+  cursor: pointer;
+}
+
+.settings-open *:last-child {
+  fill:#778899;
+}
+
+.App .main-heading {
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  fill:white;
+}
