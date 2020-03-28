@@ -10,14 +10,21 @@ export const initialState = [
         id: 1,
         task: "Take a look around.",
         completed: false,
-        tags: ["todo"],
+        tags: [],
         due: "2020-07-25"
     },
     {
         id: 2,
-        task: "Separate your tags with commas!",
+        task: "Separate your tags with commas",
         completed: false,
-        tags: ["one", "two", "three"],
+        tags: ["one", "two", "three", "tag"],
+        due: "2020-03-17"
+    },
+    {
+        id: 3,
+        task: "Click on a tag to filter your todos",
+        completed: false,
+        tags: ["tag"],
         due: "2020-03-17"
     }
 ]

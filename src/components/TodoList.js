@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react'
+import React, { useState, useReducer, useEffect } from 'react'
 import { initialState, todoReducer } from '../reducers/todoReducer'
 import { ReactSVG } from 'react-svg'
 import Todo from './Todo'
@@ -8,15 +8,40 @@ import './TodoList.css'
 export default function TodoList() {
     const [todos, dispatch] = useReducer(todoReducer, (JSON.parse(localStorage.getItem("todos")) || initialState));
     const [selectedTags, setTags] = useState([]);
+    const [allCleared, setAllCleared] = useState(true);
+
+    useEffect(() => {
+        let completedPresent = false;
+        todos.forEach(todo => {
+            if (todo.completed) {
+                completedPresent = true;
+            }
+        })
+        if (completedPresent === true) {
+            setAllCleared(false);
+        }
+        else {
+            setAllCleared(true);
+        }
+    }, [todos])
 
     const removeTag = tag => {
         setTags(selectedTags.filter(selectedTag => (selectedTag !== tag)))
     }
 
+    const clearCompleted = event => {
+        event.preventDefault();
+        if (!allCleared) {
+            event.preventDefault();
+            dispatch({type: "CLEAR_COMPLETED"});
+            dispatch({type: "SAVE_CHANGES"});
+        }
+    }
+
     return (
         <div className="todo-list-container">
             <div className={(selectedTags.length > 0) ? "selected-tags-container open" : "selected-tags-container closed"}>
-                {(selectedTags.length > 0) && <button onClick={() => setTags([])}>All</button>}
+                <button onClick={() => setTags([])}>All</button>
                 <div className="selected-tags">
                     {(selectedTags.length > 0) && (selectedTags.map((tag, index) => <div key={`tag-${index}`} className="selected-tag">
                         <ReactSVG src="clear.svg" onClick={() => removeTag(tag)} />
@@ -41,10 +66,7 @@ export default function TodoList() {
                 return (displayTodo && <Todo key={todo.id} todo={todo} dispatch={dispatch} setTags={setTags} selectedTags={selectedTags}/>)
             })}
             <TodoForm dispatch={dispatch}/>
-            <button className="todo-list-button" onClick={() => {
-                dispatch({type: "CLEAR_COMPLETED"});
-                dispatch({type: "SAVE_CHANGES"});
-            }}>Clear Completed</button>
+            <button className={allCleared ? "inactive" : ""} onClick={clearCompleted}>Clear Completed</button>
         </div>
     )
 }

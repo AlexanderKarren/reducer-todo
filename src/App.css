@@ -20,12 +20,12 @@
 }
 
 .App .main-heading *:last-child:hover {
-  fill:#778899;
+  fill-opacity: .3;
   cursor: pointer;
 }
 
 .settings-open *:last-child {
-  fill:#778899;
+  fill-opacity: .3;
 }
 
 .App .main-heading {
@@ -33,7 +33,10 @@
   display:flex;
   justify-content:space-between;
   align-items:center;
-  fill:white;
+  /* fill:white; */
+  fill:rgba(173, 173, 173);
+  fill-opacity: .2;
+  stroke:white;
 }
 
 label:hover {

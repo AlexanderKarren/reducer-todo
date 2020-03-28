@@ -78,3 +78,13 @@
     fill:#778899;
     cursor:pointer;
 }
+
+button.inactive {
+    color:lightgray;
+    border:1px solid lightgray;
+}
+  
+button.inactive:hover {
+    cursor: default;
+    background-color:rgba(173, 173, 173, 0.5);
+}
