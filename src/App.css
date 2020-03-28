@@ -16,6 +16,7 @@
 /* Gear SVG */
 .App .main-heading *:last-child {
   margin-right:5px;
+  transition:0s;
 }
 
 .App .main-heading *:last-child:hover {
@@ -33,4 +34,8 @@
   justify-content:space-between;
   align-items:center;
   fill:white;
+}
+
+label:hover {
+  cursor:pointer;
 }

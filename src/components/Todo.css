@@ -54,3 +54,8 @@
     border-radius:10px;
     font-size:.9rem;
 }
+
+.tag:hover {
+    border:2px solid cornflowerblue;
+    color:cornflowerblue;
+}
