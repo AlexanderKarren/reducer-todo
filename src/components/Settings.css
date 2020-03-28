@@ -36,7 +36,7 @@
     color:lightgray;
     border:1px solid lightgray;
 }
-
+  
 .settings button.inactive:hover {
     cursor: default;
     background-color:inherit;
