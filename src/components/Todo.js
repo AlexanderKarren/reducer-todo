@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import Moment from 'react-moment'
+import moment from 'moment';
 import './Todo.css'
 
 export default function Todo({ todo, dispatch, setTags, selectedTags }) {
     const [overdue, setOverdueStatus] = useState(false);
 
-    const handleChange = event => {
-        dispatch({type: "TOGGLE_COMPLETION", payload:event.target.value})
-    }
+    useEffect(() => {
+        if (moment().diff(todo.due, "days") > 0) {
+            setOverdueStatus(true);
+        } 
+    }, [todo])
+
+    const handleChange = event => dispatch({type: "TOGGLE_COMPLETION", payload:event.target.value})
 
     const updateTags = tag => {
         let alreadyPresent = false;
@@ -36,7 +41,7 @@ export default function Todo({ todo, dispatch, setTags, selectedTags }) {
                     updateTags(tag);
                 }}>{tag}</div>)}
             </div>
-            <div style={overdue ? {color: "red"} : {color: "inherit"}}><Moment format="MMM Do, YYYY" date={todo.due}/></div>
+            <div style={overdue ? {color: "red"} : {color: "inherit"}}>{todo.due && (<Moment format="MMM Do, YYYY" date={todo.due}/>)}</div>
         </div>
     )
 }

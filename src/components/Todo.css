@@ -37,8 +37,13 @@
     transition:0s;
 }
 
+/* Date Container*/
 .todo > div:last-child {
     width:16%;
+}
+/* Date */
+.todo > div > time:last-child:hover {
+    color:cornflowerblue;
 }
 
 .tags {
