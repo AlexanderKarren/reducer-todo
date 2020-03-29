@@ -4,28 +4,28 @@ export const initialState = [
         task: "Welcome to my new reducer todo app!",
         completed: false,
         tags: ["app", "react", "javascript"],
-        due: "2020-04-16"
+        due: "2025-04-16"
     },
     {
         id: 1,
         task: "Take a look around.",
         completed: false,
         tags: [],
-        due: "2020-07-25"
+        due: "2025-07-25"
     },
     {
         id: 2,
         task: "Separate your tags with commas",
         completed: false,
         tags: ["one", "two", "three", "tag"],
-        due: "2020-03-17"
+        due: "2025-03-17"
     },
     {
         id: 3,
         task: "Click on a tag to filter your todos",
         completed: false,
         tags: ["tag"],
-        due: "2020-03-17"
+        due: "2025-03-17"
     }
 ]
 
@@ -46,6 +46,18 @@ export const todoReducer = (state, action) => {
                     return {
                         ...todo,
                         completed: !todo.completed
+                    }
+                }
+                else {
+                    return todo;
+                }
+            })
+        case "UPDATE_DATE":
+            return state.map(todo => {
+                if (todo.id === action.payload.id) {
+                    return {
+                        ...todo,
+                        due: action.payload.date
                     }
                 }
                 else {
