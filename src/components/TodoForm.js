@@ -10,10 +10,10 @@ export default function TodoForm({dispatch}) {
     const [emptyTask, setEmptyTask] = useState(false);
 
     const handleChange = event => {
-        if (event.target.value <= 20) {
+        if (event.target.value.length <= 40) {
             setValues({
                 ...values,
-                [event.target.name]:[event.target.value]
+                [event.target.name]:event.target.value
             })
         }
     }

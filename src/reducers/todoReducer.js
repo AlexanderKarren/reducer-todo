@@ -32,7 +32,7 @@ export const initialState = [
 export const todoReducer = (state, action) => {
     switch (action.type) {
         case "ADD_TO_LIST":
-            let tag = (action.payload.tags === "") ? [null] : action.payload.tags[0].split(",");
+            let tag = (action.payload.tags === "") ? [null] : action.payload.tags.split(",");
           return [...state, {
               id: Date.now(),
               task: action.payload.task,
