@@ -26,6 +26,7 @@ export default function TodoForm({dispatch}) {
                 type: "ADD_TO_LIST",
                 payload: values,
             })
+            console.log(values);
             dispatch({type: "SAVE_CHANGES"})
             setValues({
                 task: "",

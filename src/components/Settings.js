@@ -16,7 +16,7 @@ const Settings = ({ setSettingsOpen }) => {
                 {clearing ?
                 <div className="buttons"><button onClick={clearSavedData}>Yes</button><button onClick={() => setClearing(false)}>No</button></div>
                 : 
-                <div className="buttons"><button className={(!localStorage.getItem("todos") && "inactive")} onClick={() => ((localStorage.getItem("todos")) && setClearing(true))}>{(localStorage.getItem("todos") ? "Clear Saved Data" : "No Saved Data")}</button></div>
+                <div className="buttons"><button className={(!localStorage.getItem("todos") ? "inactive" : "")} onClick={() => ((localStorage.getItem("todos")) && setClearing(true))}>{(localStorage.getItem("todos") ? "Clear Saved Data" : "No Saved Data")}</button></div>
                 }
                 <p>{clearing ? "Are you sure?" : ((localStorage.getItem("todos")) && "This will remove all your todos!")}</p>
             </div>
