@@ -1,6 +1,6 @@
 # Todo App 2 (Reducer Todo)
 
-## Deploy Link: https://todo-app-2.now.sh/
+Deploy Link: https://todo-app-2.now.sh/
 
 ## Description
 
